@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matthew Bendowski — Creative Portfolio</title>
+  <title>Matt Bendowski — Creative Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -301,6 +301,71 @@
     .g-col-3 { grid-template-columns: repeat(3, 1fr); }
     .g-col-2 { grid-template-columns: repeat(2, 1fr); }
 
+    .girard-dropdown {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      background: rgba(26, 30, 46, 0.35);
+      padding: 8px 14px 16px;
+      margin: 22px 0 0;
+    }
+
+    .subsection-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+    }
+
+    .subsection-title::-webkit-details-marker { display: none; }
+
+    .subsection-title::after {
+      content: '▾';
+      font-size: 16px;
+      color: rgba(255,255,255,0.7);
+      transition: transform 0.2s ease;
+    }
+
+    .girard-dropdown:not([open]) .subsection-title::after {
+      transform: rotate(-90deg);
+    }
+
+    .girard-dropdown .gallery {
+      margin-top: 10px;
+    }
+
+    .about-links {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .about-links a {
+      color: rgba(255,255,255,0.9);
+      border: 1px solid rgba(46, 107, 162, 0.45);
+      background: rgba(46, 107, 162, 0.08);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+
+    .about-links a:hover {
+      color: var(--white);
+      border-color: rgba(46, 107, 162, 0.8);
+      background: rgba(46, 107, 162, 0.2);
+    }
+
     .g-item {
       position: relative;
       overflow: hidden;
@@ -505,8 +570,9 @@
 
 <!-- ════════════════════════════ NAV ════════════════════════════ -->
 <nav id="nav">
-  <img src="Zip%20for%20Website/Zip%20for%20Website/Personal%20Brand%20Logo%20WHITE.png" alt="Matthew Bendowski" class="nav-logo">
+  <img src="Zip%20for%20Website/Zip%20for%20Website/Personal%20Brand%20Logo%20WHITE.png" alt="Matt Bendowski" class="nav-logo">
   <ul class="nav-links">
+    <li><a href="#about">About</a></li>
     <li><a href="#pressed-poured">Pressed &amp; Poured</a></li>
     <li><a href="#heinz">Timeless Heinz</a></li>
     <li><a href="#sega">SEGA 1V1</a></li>
@@ -521,8 +587,8 @@
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-content">
-    <img src="Zip%20for%20Website/Zip%20for%20Website/Personal%20Brand%20Logo%20WHITE.png" alt="Matthew Bendowski" class="hero-logo">
-    <h1 class="hero-name">MATTHEW <span>BENDOWSKI</span></h1>
+    <img src="Zip%20for%20Website/Zip%20for%20Website/Personal%20Brand%20Logo%20WHITE.png" alt="Matt Bendowski" class="hero-logo">
+    <h1 class="hero-name">MATT <span>BENDOWSKI</span></h1>
     <p class="hero-sub">Creative Advertising &amp; Design Portfolio</p>
     <div class="hero-line"></div>
   </div>
@@ -534,6 +600,29 @@
 
 <!-- ════════════════════════════ PROJECTS ════════════════════════════ -->
 <div class="page-wrap">
+
+  <!-- ── ABOUT ── -->
+  <section class="project reveal" id="about">
+    <div class="project-header">
+      <div>
+        <span class="project-eyebrow">About</span>
+        <h2 class="project-title">Matt<br>Bendowski</h2>
+        <div class="project-tags">
+          <span class="tag">Creative Advertising</span>
+          <span class="tag">Design</span>
+          <span class="tag">Social Media</span>
+        </div>
+      </div>
+      <div class="project-desc">
+        <p>I am a creative focused on campaign thinking, visual storytelling, and design systems that connect ideas across digital, print, and social spaces. This portfolio highlights selected campaign, institutional, and video work.</p>
+        <p>If you'd like to connect, you can reach me directly by email or LinkedIn.</p>
+        <div class="about-links">
+          <a href="mailto:matthewbendowski9@gmail.com">matthewbendowski9@gmail.com</a>
+          <a href="https://www.linkedin.com/in/matthew-bendowski/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ── ADVERTISING CAMPAIGNS ── -->
   <div class="category-divider reveal">
@@ -741,72 +830,90 @@
         <p>A key part of the role involved working with the museum's archival photography, incorporating striking historical images into modern, cohesive designs with clean typography and structured compositions — creating a body of work that both honored Girard College's history and reintroduced it through a contemporary lens.</p>
       </div>
     </div>
-    <div class="gallery g-col-3" data-gallery="girard">
+    <details class="girard-dropdown">
+      <summary class="subsection-title">Did You Know</summary>
+      <div class="gallery g-col-3" data-gallery="girard-did-you-know">
+      <div class="g-item" data-idx="0">
+        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Did%20You%20Know%20Mockups%20RGB.jpg" alt="Did You Know Mockups" loading="lazy">
+        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="g-item" data-idx="1">
+        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Did%20You%20Know%20(Chapel)%20RGB.jpg" alt="Did You Know - Chapel" loading="lazy">
+        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="g-item" data-idx="2">
+        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Did%20You%20Know%20(Girard%20Estate)%20RGB.jpg" alt="Did You Know - Girard Estate" loading="lazy">
+        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="g-item" data-idx="3">
+        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Did%20You%20Know%20(Historic%20Marker)%20RGB.jpg" alt="Did You Know - Historic Marker" loading="lazy">
+        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      </div>
+    </details>
+    <details class="girard-dropdown">
+      <summary class="subsection-title">Look Familiar</summary>
+      <div class="gallery g-col-3" data-gallery="girard-look-familiar">
+      <div class="g-item" data-idx="0">
+        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Look%20Familiar%201.jpg" alt="Look Familiar 1" loading="lazy">
+        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="g-item" data-idx="1">
+        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Look%20Familiar%202.jpg" alt="Look Familiar 2" loading="lazy">
+        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="g-item" data-idx="2">
+        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Look%20Familiar%203.jpg" alt="Look Familiar 3" loading="lazy">
+        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      </div>
+    </details>
+    <details class="girard-dropdown">
+      <summary class="subsection-title">Neighbor Day</summary>
+      <div class="gallery g-col-3" data-gallery="girard-neighbor-day">
+      <div class="g-item" data-idx="0">
+        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Founders%20Hall%20Neighbor%20Day%20Promo%201.%20jpg.jpg" alt="Neighbor Day Promo 1" loading="lazy">
+        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="g-item" data-idx="1">
+        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Founders%20Hall%20Neighbor%20Day%20Promo%202.%20jpg.jpg" alt="Neighbor Day Promo 2" loading="lazy">
+        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="g-item" data-idx="2">
+        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Founders%20Hall%20Neighbor%20Day%20Promo%203.%20jpg.jpg" alt="Neighbor Day Promo 3" loading="lazy">
+        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      </div>
+    </details>
+    <details class="girard-dropdown">
+      <summary class="subsection-title">Additional Girard Work</summary>
+      <div class="gallery g-col-3" data-gallery="girard-mixed">
       <div class="g-item span2" data-idx="0">
         <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20EMS%20Building%20Banner%20Mockups.jpg" alt="EMS Building Banner Mockups" loading="lazy">
         <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
       </div>
       <div class="g-item" data-idx="1">
-        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Did%20You%20Know%20Mockups%20RGB.jpg" alt="Did You Know Mockups" loading="lazy">
-        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
-      </div>
-      <div class="g-item" data-idx="2">
-        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Did%20You%20Know%20(Chapel)%20RGB.jpg" alt="Did You Know - Chapel" loading="lazy">
-        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
-      </div>
-      <div class="g-item" data-idx="3">
-        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Did%20You%20Know%20(Girard%20Estate)%20RGB.jpg" alt="Did You Know - Girard Estate" loading="lazy">
-        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
-      </div>
-      <div class="g-item" data-idx="4">
-        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Did%20You%20Know%20(Historic%20Marker)%20RGB.jpg" alt="Did You Know - Historic Marker" loading="lazy">
-        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
-      </div>
-      <div class="g-item" data-idx="5">
-        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Look%20Familiar%201.jpg" alt="Look Familiar 1" loading="lazy">
-        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
-      </div>
-      <div class="g-item" data-idx="6">
-        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Look%20Familiar%202.jpg" alt="Look Familiar 2" loading="lazy">
-        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
-      </div>
-      <div class="g-item" data-idx="7">
-        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Look%20Familiar%203.jpg" alt="Look Familiar 3" loading="lazy">
-        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
-      </div>
-      <div class="g-item" data-idx="8">
-        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Founders%20Hall%20Neighbor%20Day%20Promo%201.%20jpg.jpg" alt="Neighbor Day Promo 1" loading="lazy">
-        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
-      </div>
-      <div class="g-item" data-idx="9">
-        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Founders%20Hall%20Neighbor%20Day%20Promo%202.%20jpg.jpg" alt="Neighbor Day Promo 2" loading="lazy">
-        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
-      </div>
-      <div class="g-item" data-idx="10">
-        <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Founders%20Hall%20Neighbor%20Day%20Promo%203.%20jpg.jpg" alt="Neighbor Day Promo 3" loading="lazy">
-        <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
-      </div>
-      <div class="g-item" data-idx="11">
         <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Founder%20Hall%20Tour%20Promo%20Flier%201.jpg" alt="Tour Promo Flier 1" loading="lazy">
         <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
       </div>
-      <div class="g-item" data-idx="12">
+      <div class="g-item" data-idx="2">
         <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20College%20Founder%20Hall%20Tour%20Promo%20Flier%202.jpg" alt="Tour Promo Flier 2" loading="lazy">
         <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
       </div>
-      <div class="g-item" data-idx="13">
+      <div class="g-item" data-idx="3">
         <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20Collage%20Founders%20Photo%20Composition%20Piece%201.jpg" alt="Founders Photo Composition 1" loading="lazy">
         <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
       </div>
-      <div class="g-item" data-idx="14">
+      <div class="g-item" data-idx="4">
         <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20Collage%20Founders%20Photo%20Composition%20Piece%202.jpg" alt="Founders Photo Composition 2" loading="lazy">
         <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
       </div>
-      <div class="g-item" data-idx="15">
+      <div class="g-item" data-idx="5">
         <img src="Zip%20for%20Website/Zip%20for%20Website/Girard%20Collage%20Founders%20Photo%20Composition%20Piece%203.jpg" alt="Founders Photo Composition 3" loading="lazy">
         <div class="g-overlay"><div class="g-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
       </div>
-    </div>
+      </div>
+    </details>
   </section>
 
   <!-- ── VIDEO PRODUCTION ── -->
@@ -843,8 +950,8 @@
 
 <!-- ════════════════════════════ FOOTER ════════════════════════════ -->
 <footer>
-  <img src="Zip%20for%20Website/Zip%20for%20Website/Personal%20Brand%20Logo%20WHITE.png" alt="Matthew Bendowski" class="footer-logo">
-  <p>&copy; 2026 Matthew Bendowski. All rights reserved.</p>
+  <img src="Zip%20for%20Website/Zip%20for%20Website/Personal%20Brand%20Logo%20WHITE.png" alt="Matt Bendowski" class="footer-logo">
+  <p>&copy; 2026 Matt Bendowski. All rights reserved.</p>
 </footer>
 
 <!-- ════════════════════════════ LIGHTBOX ════════════════════════════ -->
